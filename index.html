@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+    :root {
+      /* Primary Colors */
+      --Red: hsl(0, 78%, 62%);
+      --Cyan: hsl(180, 62%, 55%);
+      --Orange: hsl(34, 97%, 64%);
+      --Blue: hsl(212, 86%, 64%);
+
+      /* Secundary Colors*/
+      --Very-Dark-Blue: hsl(234, 12%, 34%);
+      --Grayish-Blue: hsl(229, 6%, 66%);
+      --Grayish-Blue-Low: hsla(229, 6%, 66%, 0.39);
+      --Very-Light-Gray: hsl(0, 0%, 98%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      text-align: center;
+      align-items: center;
+    }
+
+/* Main Text */
+    .main-text {
+      margin: 0 auto;
+      align-items: center;
+      max-width: 500px;
+    }
+
+    .title h1 {
+      font-weight: 200;
+      margin: 0 auto;
+      max-width: 350px;
+      color: var(--Very-Dark-Blue);
+    }
+
+    .title h1 .bold {
+      font-weight: 600;
+      color: var(--Very-Dark-Blue);
+    }
+
+    .main-text p {
+      font-size: 15px;
+      font-weight: 400;
+      padding-top: 10px;
+      color: var(--Grayish-Blue);
+    }
+/* Main Text */
+
+
+/* Cards */
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    /* Supervisor Div */
+    .c-supervisor {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      max-width: 60%;
+      padding: 30px;
+      box-shadow: 5px 5px 20px var(--Grayish-Blue-Low);
+      border-top: 5px solid var(--Cyan);
+      border-radius: 5px;
+    }
+
+    .c-supervisor:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .c-supervisor h2 {
+      font-size: 15px;
+      color: var(--Very-Dark-Blue);
+      padding-bottom: 10px;
+    }
+
+    .c-supervisor p {
+      max-width: 300px;
+      text-align: start;
+      color: var(--Grayish-Blue);
+      padding-bottom: 30px;
+    }
+
+    .sup-image {
+      width: 50px;
+      margin-left: auto;
+    }
+    /* Supervisor Div */
+
+    /* Team Builder Div */
+    .c-teambuilder {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      max-width: 100%;
+      padding: 30px;
+      box-shadow: 5px 5px 20px var(--Grayish-Blue-Low);
+      border-top: 5px solid var(--Red);
+      border-radius: 5px;
+    }
+
+    .c-teambuilder:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .c-teambuilder h2 {
+      font-size: 15px;
+      color: var(--Very-Dark-Blue);
+      padding-bottom: 10px;
+    }
+
+    .c-teambuilder p {
+      max-width: 300px;
+      text-align: start;
+      color: var(--Grayish-Blue);
+      padding-bottom: 30px;
+    }
+
+    .tb-image {
+      width: 30px;
+      margin-left: auto;
+    }
+    /* Team Builder Div */
+
+    /* Karma Div */
+    .c-karma {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      max-width: 100%;
+      padding: 30px;
+      box-shadow: 5px 5px 20px var(--Grayish-Blue-Low);
+      border-top: 5px solid var(--Orange);
+      border-radius: 5px;
+    }
+
+    .c-karma:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .c-karma h2 {
+      font-size: 15px;
+      color: var(--Very-Dark-Blue);
+      padding-bottom: 10px;
+    }
+
+    .c-karma p {
+      max-width: 300px;
+      text-align: start;
+      color: var(--Grayish-Blue);
+      padding-bottom: 30px;
+    }
+
+    .kar-image {
+      width: 30px;
+      margin-left: auto;
+    }
+    /* Karma Div */
+
+    /* Calculator Div */
+    .c-calculator {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      max-width: 60%;
+      padding: 30px;
+      box-shadow: 5px 5px 20px var(--Grayish-Blue-Low);
+      border-top: 5px solid var(--Blue);
+      border-radius: 5px;
+    }
+
+    .c-calculator:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .c-calculator h2 {
+      font-size: 15px;
+      color: var(--Very-Dark-Blue);
+      padding-bottom: 10px;
+    }
+
+    .c-calculator p {
+      max-width: 300px;
+      text-align: start;
+      color: var(--Grayish-Blue);
+      padding-bottom: 30px;
+    }
+
+    .cal-image {
+      width: 30px;
+      margin-left: auto;
+    }
+    /* Calculator Div */
+
+
+    .block-tb-karma {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+/* Cards */
+
+/* Footer */
+    .attribution { font-size: 11px; text-align: center; position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%); top: 98%; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+/* Responsiveness */
+
+/*Tablet */
+@media screen and (max-width: 1100px){
+
+body {
+  height: 150vh;
+  max-width: 1100px;
+}
+
+.main-text {
+  max-width: 1100px;
+}
+
+.main-text .title {
+  font-size: 18px;
+  width: 1100px;
+  margin: auto;
+}
+
+.main-text p {
+  max-width: 500px;
+  margin: auto;
+  font-size: 18px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.block-tb-karma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-supervisor {
+  max-width: 300px;
+}
+
+.c-teambuilder {
+  max-width: 300px;
+}
+
+.c-karma {
+  max-width: 300px;
+}
+
+.c-calculator {
+  max-width: 300px;
+}
+
+.attribution {
+  position: relative;
+}
+}
+/*Tablet */
+
+/* Mobile */
+@media screen and (max-width: 431px){
+
+  body {
+    height: 200vh;
+    max-width: 431px;
+  }
+
+  .main-text p {
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .block-tb-karma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .c-supervisor {
+    max-width: 250px;
+  }
+
+  .c-teambuilder {
+    max-width: 250px;
+  }
+
+  .c-karma {
+    max-width: 250px;
+  }
+
+  .c-calculator {
+    max-width: 250px;
+  }
+
+  .attribution {
+    position: relative;
+  }
+}
+@media screen and (max-width: 359px){
+
+body {
+  height: 300vh;
+  max-width: 359px;
+}
+
+.main-text p {
+  max-width: 250px;
+  margin: auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.block-tb-karma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-supervisor {
+  max-width: 200px;
+}
+
+.c-teambuilder {
+  max-width: 200px;
+}
+
+.c-karma {
+  max-width: 200px;
+}
+
+.c-calculator {
+  max-width: 200px;
+}
+
+.attribution {
+  position: relative;
+}
+}
+/* Mobile */
+
+  </style>
+</head>
+<body>
+<!-- Main Content -->
+  <main>
+    <section class="main-content">
+      <div class="container">
+        <div class="main-text">
+          <div class="title">
+            <h1>Reliable, efficient delivery <strong class="bold">Powered by Technology</strong></h1>
+          </div>
+          <p>Our Artifical Intelligence powered tools use millions of project data points to ensure that your project is successful</p>
+        </div>
+        <div class="cards">
+          <div class="c-supervisor">
+            <h2>Supervisor</h2>
+            <p>Monitors activity to identify project roadblocks</p>
+            <div class="sup-image">
+              <img src="images/icon-supervisor.svg" alt="supervisor icon">
+            </div>
+          </div>
+        <div class="block-tb-karma">
+          <div class="c-teambuilder">
+            <h2>Team Builder</h2>
+            <p>Scans our talent network to create the optimal team for your project</p>
+            <div class="tb-image">
+              <img src="images/icon-team-builder.svg" alt="team builder icon">
+            </div>
+          </div>
+          <div class="c-karma">
+            <h2>Karma</h2>
+            <p>Regularly evaluates our talent to ensure quality</p>
+            <div class="kar-image">
+              <img src="images/icon-karma.svg" alt="karma icon">
+            </div>
+          </div>
+        </div>
+          <div class="c-calculator">
+            <h2>Calculator</h2>
+            <p>Uses data from past projects to provide better delivery estimates</p>
+            <div class="cal-image">
+              <img src="images/icon-calculator.svg" alt="calculator icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/Cairowisk">Cairo Garbelotto</a>.
+    </p>
+  </footer>
+</body>
+</html>
